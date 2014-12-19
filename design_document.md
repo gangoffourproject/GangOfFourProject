@@ -110,7 +110,15 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
       TOPICID |           
       RENEWDATE |
 
- - 信息分类表(UserIntent)
+ - 消息类型表(MessageType)
+ 
+ Column Name | Type | Length | Nullable | Default Value | Key | Comment
+      --- | ---
+ ID | 
+ Name | 
+ 
+
+ - 消息内容属性表(Property)
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
@@ -120,12 +128,25 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
     SUBCATEGORY | 
     DESCRIPTION | 
          
- - 内容表
+ - 消息表(Message)
+ 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
 ID |
-
+TYPEID |
+PROPERTYID | 
+CONTENT |
  
- - 成就表
- - 用户消息表
+ - 用户消息表(UserMessage)
 
+ Column Name | Type | Length | Nullable | Default Value | Key | Comment
+    --- | --- 
+ID |
+USERID |
+MESSAGEID |
+CONTENT |
+RENEWDATE |
+COUNTS |
+
+ - 用户成就表(待定)
+ - 消息频度表(待定) 
