@@ -101,7 +101,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
      MEMO |
      RENEWDATE | 
       
- - 用户关注信息表
+ - 用户关注信息表(UserIntent)
   
      Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | --- 
@@ -109,8 +109,22 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
       USERID |
       TOPICID |           
       RENEWDATE |
+
+ - 信息分类表(UserIntent)
+
+ Column Name | Type | Length | Nullable | Default Value | Key | Comment
+    --- | --- 
+    ID |
+    NAME | 
+    CATEGORY | 
+    SUBCATEGORY | 
+    DESCRIPTION | 
          
  - 内容表
+ Column Name | Type | Length | Nullable | Default Value | Key | Comment
+    --- | --- 
+ID |
+ 
  - 成就表
  - 用户消息表
 
