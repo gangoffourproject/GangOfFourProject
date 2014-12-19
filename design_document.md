@@ -124,6 +124,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
 ID |
+
  
  - 成就表
  - 用户消息表
