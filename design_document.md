@@ -57,31 +57,31 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
  
       Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | ---
-      ID | INT | - | false | - | X(1) | user identification 
-      SUBSCRIBE |
-      SUBSCRIBETIME |
-      SOURCE | 
-      OPENID |
-      NICKNAME |
-      SEX |
-      CITY |
-      COUNTRY |
-      LANGUAGE |
-      UNIONID |
-      AGE |
-      PROVINCE |
-      REMARKNAME |
-      PHONENUMBER1 |
-      PHONENUMBER2 |
-      PHONENUMBER3 |
-      EMAIL1 |
-      EMAIL2 |
-      BIRTHDAY |
-      CONSTELLATION |
-      BLOODTYPE |
-      RENEWDATE |
-      GROUPID |
-      LEVELID |
+      ID | INT | - | false | - | X(1) | 用户唯一标示 
+      SUBSCRIBE | BOOLEAN | - | false | true | - | 是否订阅
+      SUBSCRIBETIME | DATE | - | false | - | - | 订阅时间 
+      SOURCE | INT | - | false | 1 | - | 1公众平台 2移动应用 3网站应用
+      OPENID | VARCHAR | 64 | false | - | X(2) | 用户在微信内部的标示
+      NICKNAME | VARCHAR | 64 | true | - | - | 用户昵称
+      SEX | INT | - | false | 0 | - | 0未知 1男性 2女性
+      CITY | VARCHAR | 64 | true | - | - | 用户所在城市
+      COUNTRY | VARCHAR | 64 | true | - | - | 用户所属国家
+      LANGUAGE | VARCHAR | 32 | false | zh_CN | - | 语言
+      UNIONID | VARCHAR | 64 | true | - | - | 用户在开发平台唯一标示
+      AGE | INT | - | true | - | - | 年龄
+      PROVINCE | VARCHAR | 64 | true | - | - | 用户所在省
+      REMARKNAME | VARCHAR | 64 | true | - | - | 用户备注名
+      PHONENUMBER1 | VARCHAR | 20 | true | - | - | 用户电话号码1
+      PHONENUMBER2 | VARCHAR | 20 | true | - | - | 用户电话号码2
+      PHONENUMBER3 | VARCHAR | 20 | true | - | - | 用户电话号码3
+      EMAIL1 | VARCHAR | 64 | true | - | - | 邮箱1
+      EMAIL2 | VARCHAR | 64 | true | - | - | 邮箱2
+      BIRTHDAY | VARCHAR | 8 | true | - | - | 生日
+      CONSTELLATION | INT | - | true | - | - | 1-12星座名
+      BLOODTYPE | INT | - | true | - | - | 1A型 2B型 3 AB型 4 O型
+      RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
+      GROUPID | INT | - | false | - | - | 用户分组ID
+      LEVELID | INT | - | false | - | - | 用户等级
 
  - 用户分组信息表(GroupInfo)
  
