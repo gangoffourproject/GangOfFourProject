@@ -132,21 +132,21 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
  
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
-ID |
-TYPEID |
-PROPERTYID | 
-CONTENT |
+ID | INT | - | false | - | X(1) | 预定义消息ID
+TYPEID | INT | - | false | - | - | 消息类型ID
+PROPERTYID | INT | - | false | - | - | 消息内容属性ID
+CONTENT | VARCHAR |  | false | - | - | 预定义消息内容 voice/image为文件位置，可以包含格式符号
  
  - 用户消息表(UserMessage)
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
-ID |
-USERID |
-MESSAGEID |
-CONTENT |
-RENEWDATE |
-COUNTS |
+ID | INT | - | false | - | X(1) | 用户消息ID
+USERID | INT | - | false | - | - | 用户ID
+MESSAGEID | INT | - | false | - | - | 预定义消息ID
+CONTENT | VARCHAR |  | false | - | - | 发送的消息内容
+RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
+
 
  - 用户成就表(待定)
  - 消息频度表(待定) 
