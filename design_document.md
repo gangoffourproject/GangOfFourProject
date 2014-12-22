@@ -144,7 +144,7 @@ CONTENT | VARCHAR |  | false | - | - | 预定义消息内容 voice/image为文�
 ID | INT | - | false | - | X(1) | 用户消息ID
 USERID | INT | - | false | - | - | 用户ID
 MESSAGEID | INT | - | false | - | - | 预定义消息ID
-CONTENT | VARCHAR |  | false | - | - | 发送的消息内容
+CONTENT | VARCHAR | 500 | false | - | - | 发送的消息内容
 RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
 
 
