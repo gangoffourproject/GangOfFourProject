@@ -87,7 +87,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
  
     Column Name | Type | Length | Nullable | Default Value | Key | Comment
      --- | --- 
-     ID |
+     ID | INT | 
      NAME |
      MEMO |
      RENEWDATE |
