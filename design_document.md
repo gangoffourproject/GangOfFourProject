@@ -122,11 +122,11 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
-    ID |
-    NAME | 
-    CATEGORY | 
-    SUBCATEGORY | 
-    DESCRIPTION | 
+    ID | INT | - | false | - | X(1) | 消息内容属性ID
+    NAME | VARCHAR | 64 | false | - | - | 属性名称
+    CATEGORY | VARCHAR | 64 | false | - | - | 属性分类
+    SUBCATEGORY | VARCHAR | 64 | false | - | - | 属性子类
+    DESCRIPTION | VARCHAR | 255 | true | - | - | 属性描述
          
  - 消息表(Message)
  
