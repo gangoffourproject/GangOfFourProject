@@ -87,35 +87,35 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
  
     Column Name | Type | Length | Nullable | Default Value | Key | Comment
      --- | --- 
-     ID | INT | 
-     NAME |
-     MEMO |
-     RENEWDATE |
+     ID | INT | - | false | - | X(1) | 分组标示
+     NAME | VARCHAR | 64 | false | - | - | 组名称 
+     MEMO | VARCHAR | 255 | false | - | - | 备注事项
+     RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
       
  - 用户等级表(LevelInfo)
  
    Column Name | Type | Length | Nullable | Default Value | Key | Comment
      --- | ---
-     ID |
-     NAME |
-     MEMO |
-     RENEWDATE | 
+     ID | INT | - | false | - | X(1) | 等级ID
+     NAME | VARCHAR | 64 | false | - | - | 等级名称
+     MEMO | VARCHAR | 255 | false | - | - | 备注事项
+     RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
       
  - 用户关注信息表(UserIntent)
   
      Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | --- 
-      ID |
-      USERID |
-      TOPICID |           
-      RENEWDATE |
+      ID | INT | - | false | - | X(1) | 关注信息ID
+      USERID | INT | - | false | - | - | 用户ID
+      TOPICID | INT | - | false | 1 | - | 用户关注主题ID          
+      RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
 
  - 消息类型表(MessageType)
  
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | ---
- ID | 
- Name | 
+ ID | INT | - | false | 1 | X(1) | 类型ID 1 文本 2 图片 3 图文 4 语音 5 视频 6 地理位置 7 链接 8 事件   
+ Name | VARCHAR | 32 | false | text | - | 类型名称 text image news voice video location link event
  
 
  - 消息内容属性表(Property)
