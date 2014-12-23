@@ -1,0 +1,33 @@
+
+
+**Git库管理说明**
+------------
+**使用场景**
+ > 在云主机上有一个中心的repository /alidata/Greetingforyou/.git（由git init创建），每一个开发者都有一个自己本地的repository, 例如用户robert, 本地目录是/home/robert, 其专有repository是/home/robert/Greetingforyou/.git(由git clone root@localhost:/alidata/Greetingforyou/.git得到)。
+ 
+ **开发者操作集**
+ 
+ > - 拉取最新代码
+     *git fetch origin*
+ 
+ > - 建立自己的branch
+     *git checkout origin -b robert*
+    
+> - 提交修改
+    *git add change.py*
+    *git commit -m "my modification"*
+
+> - 提交到远端
+    *git push origin HEAD:robert* 其中robert为远端branch名
+
+**中心repository操作**
+  > -  merge开发者新的提交
+  *git merge robert* 并且删除开发者branch *git branch -D robert* 这样可以便于下一次开发者提交到同一branch
+
+**操作规范**
+
+> - 开发者开发前同步最新代码（建议）
+> - 中心服务器管理员（暂定robert）每天下午5点做一次代码的merge操作
+> - github作为备用repository不定期的同步中心服务器的代码
+
+ 
