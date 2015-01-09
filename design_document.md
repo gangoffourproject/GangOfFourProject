@@ -53,7 +53,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
 
 **数据库表结构**
 
- - 用户表(User)
+ - 用户表(user)
  
       Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | ---
@@ -83,7 +83,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
       GROUPID | INT | - | false | - | - | 用户分组ID
       LEVELID | INT | - | false | - | - | 用户等级
 
- - 用户分组信息表(GroupInfo)
+ - 用户分组信息表(groupinfo)
  
     Column Name | Type | Length | Nullable | Default Value | Key | Comment
      --- | --- 
@@ -92,7 +92,7 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
      MEMO | VARCHAR | 255 | false | - | - | 备注事项
      RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
       
- - 用户等级表(LevelInfo)
+ - 用户等级表(levelinfo)
  
    Column Name | Type | Length | Nullable | Default Value | Key | Comment
      --- | ---
@@ -101,47 +101,52 @@ Our Server->Wechat User: Send predefined acknowledgement news type message as re
      MEMO | VARCHAR | 255 | false | - | - | 备注事项
      RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
       
- - 用户关注信息表(UserIntent)
+ - 用户关注信息表(uerintent)
   
      Column Name | Type | Length | Nullable | Default Value | Key | Comment
       --- | --- 
       ID | INT | - | false | - | X(1) | 关注信息ID
       USERID | INT | - | false | - | - | 用户ID
-      TOPICID | INT | - | false | 1 | - | 用户关注主题ID          
+      TOPICID | INT | - | false | 1 | - | 用户关注主题ID
+      SYSMESSAGEID | INT | - | true | null | - | 系统消息模板ID
+      USERMESSAGEID | INT | - | true | null | - | 用户消息模板ID          
       RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
-
- - 消息类型表(MessageType)
- 
- Column Name | Type | Length | Nullable | Default Value | Key | Comment
-      --- | ---
- ID | INT | - | false | 1 | X(1) | 类型ID 1 文本 2 图片 3 图文 4 语音 5 视频 6 地理位置 7 链接 8 事件   
- Name | VARCHAR | 32 | false | text | - | 类型名称 text image news voice video location link event
  
 
- - 消息内容属性表(Property)
+ - 消息主题表(topic)
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
-    ID | INT | - | false | - | X(1) | 消息内容属性ID
-    NAME | VARCHAR | 64 | false | - | - | 属性名称
-    CATEGORY | VARCHAR | 64 | false | - | - | 属性分类
-    SUBCATEGORY | VARCHAR | 64 | false | - | - | 属性子类
+    ID | INT | - | false | - | X(1) | 消息主题ID
+    NAME | VARCHAR | 64 | false | - | - | 主题名称
+    FATHERID | INT | - | false | -1 | - | 父主题ID
     DESCRIPTION | VARCHAR | 255 | true | - | - | 属性描述
          
- - 消息表(Message)
+ - 系统消息表(sysmessage)
  
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
 ID | INT | - | false | - | X(1) | 预定义消息ID
-TYPEID | INT | - | false | - | - | 消息类型ID
-PROPERTYID | INT | - | false | - | - | 消息内容属性ID
+TYPE | INT | - | false | - | - | 消息类型 1 文本 2 图片 3 图文 4 语音 5 视频 6 地理位置 7 链接 8 事件
+TOPICID | INT | - | false | - | - | 消息主题属性ID
 CONTENT | VARCHAR |  | false | - | - | 预定义消息内容 voice/image为文件位置，可以包含格式符号
  
- - 用户消息表(UserMessage)
+ - 消息表(usermessage)
+ 
+ Column Name | Type | Length | Nullable | Default Value | Key | Comment
+    --- | --- 
+ID | INT | - | false | - | X(1) | 用户预定义消息ID
+USERID | INT | - | false | - | - | 用户ID
+TYPE | INT | - | false | - | - | 消息类型 1 文本 2 图片 3 图文 4 语音 5 视频 6 地理位置 7 链接 8 事件
+TOPICID | INT | - | false | - | - | 消息主题属性ID
+CONTENT | VARCHAR |  | false | - | - | 预定义消息内容 voice/image为文件位置，可以包含格式符号
+ISPUBLIC | BOOLEAN | - | false | true | - | 是否公开
+ 
+ - 发送消息表(sendmessage)
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
-ID | INT | - | false | - | X(1) | 用户消息ID
+ID | INT | - | false | - | X(1) | 发送消息ID
 USERID | INT | - | false | - | - | 用户ID
 MESSAGEID | INT | - | false | - | - | 预定义消息ID
 CONTENT | VARCHAR | 500 | false | - | - | 发送的消息内容
