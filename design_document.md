@@ -142,13 +142,14 @@ TOPICID | INT | - | false | - | - | 消息主题属性ID
 CONTENT | VARCHAR |  | false | - | - | 预定义消息内容 voice/image为文件位置，可以包含格式符号
 ISPUBLIC | BOOLEAN | - | false | true | - | 是否公开
  
- - 发送消息表(sendmessage)
+ - 发送消息表(sentmessage)
 
  Column Name | Type | Length | Nullable | Default Value | Key | Comment
     --- | --- 
 ID | INT | - | false | - | X(1) | 发送消息ID
 USERID | INT | - | false | - | - | 用户ID
-MESSAGEID | INT | - | false | - | - | 预定义消息ID
+SYSMESSAGEID | INT | - | false | - | - | 预定义消息ID
+USERMESSAGEID | INT | - | false | - | - | 用户自定义消息ID
 CONTENT | VARCHAR | 500 | false | - | - | 发送的消息内容
 RENEWDATE | TIMESTAMP | - | false | - | - | 更新时间
 
